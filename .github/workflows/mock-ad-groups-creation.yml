@@ -10,7 +10,6 @@ jobs:
     runs-on: [self-hosted, windows, harbour] # You can also use windows-latest
     steps:
       - name: Run PowerShell script
-        shell: pwsh # Specifies PowerShell Core
         run: |
           Write-Host "Hello World from PowerShell!"
           $version = $PSVersionTable.PSVersion
