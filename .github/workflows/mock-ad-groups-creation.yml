@@ -1,9 +1,26 @@
 name: PowerShell Hello World
 
-on: 
+on:
+  workflow_dispatch:
+    inputs:
+      inputs-json:
+        description: JSON payload containing all necessary inputs as key/value pairs.
+        required: true
+        type: string
+        default: '{"adGroupsCreationEnvironment": "TEST", "adGroupNames": ["adGroup1"]}'
+      run-name:
+        description: The desired name for the workflow run
+        required: true
+        default: 'HarbourFlowName-GUID'
+      output-job-name:
+        description: The name of the job that writes the output of the workflow run to the console.
+        required: true
+        default: 'output-job-GUID'
+      json-response-key:
+        description: The key used to log the JSON response by the output job in the console.
+        required: true
+        default: 'json-response'
   push:
-    branches: [ main ]
-  workflow_dispatch: # Allows manual triggering from the Actions tab
 
 jobs:
   say-hello:
