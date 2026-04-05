@@ -1,0 +1,17 @@
+name: PowerShell Hello World
+
+on: 
+  push:
+    branches: [ main ]
+  workflow_dispatch: # Allows manual triggering from the Actions tab
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest # You can also use windows-latest
+    steps:
+      - name: Run PowerShell script
+        shell: pwsh # Specifies PowerShell Core
+        run: |
+          Write-Host "Hello World from PowerShell!"
+          $version = $PSVersionTable.PSVersion
+          Write-Host "Running on PowerShell version: $version"
