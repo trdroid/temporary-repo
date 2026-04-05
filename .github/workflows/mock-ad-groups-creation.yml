@@ -7,7 +7,7 @@ on:
 
 jobs:
   say-hello:
-    runs-on: ubuntu-latest # You can also use windows-latest
+    runs-on: [self-hosted, windows, harbour] # You can also use windows-latest
     steps:
       - name: Run PowerShell script
         shell: pwsh # Specifies PowerShell Core
